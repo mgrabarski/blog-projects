@@ -1,13 +1,11 @@
 package blog.mateuszgrabarski.database
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import blog.mateuszgrabarski.database.databinding.ActivityMainBinding
 import blog.mateuszgrabarski.database.entities.ProductEntity
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 @DelicateCoroutinesApi
 class MainActivity : AppCompatActivity() {
@@ -20,12 +18,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         GlobalScope.launch(Dispatchers.IO) {
-            val product = ProductEntity("product name", "some create date", "store name")
+            delay(100)
+            val product = ProductEntity("product name", "some create date", "store name", "", 0)
 
             val productDao = (application as App).providesProductDao()
 
             // Insert
             val productId = productDao.insert(product)
+            Log.d("MainActivity", "onCreate: $productId")
 
             // Get
             val productFromDatabase = productDao.getById(productId.toInt())

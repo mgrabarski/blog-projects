@@ -2,6 +2,7 @@ package blog.mateuszgrabarski.database
 
 import android.app.Application
 import androidx.room.Room
+import blog.mateuszgrabarski.database.migrations.MigrationFrom2To3
 
 class App : Application() {
 
@@ -12,12 +13,13 @@ class App : Application() {
 
         // budujemy bazę danych
         database =
-        Room.databaseBuilder(
-            this, // Context
-            ApplicationDatabase::class.java, // Klasa opisująca bazę danych
-            DATABASE_NAME // Nazwa bazy
-        ).allowMainThreadQueries() // Pozwala na korzystanie z bazy w głównym wątku aplikacji
-            .build()
+            Room.databaseBuilder(
+                this,
+                ApplicationDatabase::class.java,
+                DATABASE_NAME
+            ).allowMainThreadQueries()
+                .addMigrations(MigrationFrom2To3())
+                .build()
     }
 
     fun providesProductDao() = database.provideProductDao()
