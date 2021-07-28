@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+java {
+    sourceCompatibility = Java.java_version
+    targetCompatibility = Java.java_version
+}
+
+dependencies {
+    implementation Dependencies.kotlin
+
+    testImplementation UnitTestDependencies.kotestCore
+    testImplementation UnitTestDependencies.kotlinCoroutines
+    testImplementation UnitTestDependencies.mockk
+    testImplementation UnitTestDependencies.junit
+    testRuntimeOnly UnitTestDependencies.junitJupiterEngine
+}

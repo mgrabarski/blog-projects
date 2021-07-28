@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="gradle_kotlin.app" target="11" />
+      <module name="gradle_kotlin.buildSrc" target="11" />
+      <module name="gradle_kotlin.core.database" target="11" />
+      <module name="gradle_kotlin.features.feature1" target="11" />
+      <module name="gradle_kotlin.features.feature2" target="11" />
+      <module name="gradle_kotlin.shared.resources" target="11" />
+      <module name="gradle_kotlin.shared.test-utils" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

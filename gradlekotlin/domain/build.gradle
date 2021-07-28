@@ -1,0 +1,4 @@
+apply from: '../gradle/base_java_library_config.gradle'
+
+dependencies {
+}

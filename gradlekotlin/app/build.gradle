@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    buildFeatures {
+        dataBinding true
+    }
+
+    compileSdkVersion ApplicationConfig.compileSdkVersion
+
+    defaultConfig {
+        applicationId Flavours.productionApplicationId
+
+        minSdkVersion ApplicationConfig.minSdkVersion
+        targetSdkVersion ApplicationConfig.targetSdkVersion
+        versionCode ApplicationConfig.versionCode
+        versionName ApplicationConfig.versionName
+
+        testInstrumentationRunner AndroidTestDependencies.instrumentation_runner
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility Java.java_version
+        targetCompatibility Java.java_version
+    }
+
+    kotlinOptions {
+        jvmTarget = Java.java_version
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+}
+
+dependencies {
+
+    implementation Dependencies.kotlin
+
+    implementation AndroidDependencies.core
+    implementation AndroidDependencies.appCompat
+    implementation AndroidDependencies.material
+    implementation AndroidDependencies.constraintLayout
+
+    implementation project(Modules.domain)
+    implementation project(Modules.database)
+    implementation project(Modules.resources)
+    implementation project(Modules.feature1)
+    implementation project(Modules.feature2)
+
+    testRuntimeOnly UnitTestDependencies.junitJupiterEngine
+    testImplementation UnitTestDependencies.junit
+    testImplementation project(Modules.testUtils)
+}

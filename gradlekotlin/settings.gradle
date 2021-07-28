@@ -1,0 +1,8 @@
+rootProject.name = "gradle kotlin"
+include ':app'
+include ':domain'
+include ':core:database'
+include ':shared:resources'
+include ':shared:test-utils'
+include ':features:feature1'
+include ':features:feature2'
