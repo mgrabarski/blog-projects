@@ -1,4 +1,4 @@
-package blog.mateuszgrabarski.todo.domain.model
+package blog.mateuszgrabarski.todo.domain.model.data
 
 import java.util.*
 
