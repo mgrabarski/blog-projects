@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "todo"
 include ':app'
+include ':domain'
