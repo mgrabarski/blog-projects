@@ -1,7 +1,7 @@
-package blog.mateuszgrabarski.todo.domain.model.repository
+package blog.mateuszgrabarski.todo.domain.data.repository
 
-import blog.mateuszgrabarski.todo.domain.model.data.ToDoList
-import blog.mateuszgrabarski.todo.domain.model.types.Id
+import blog.mateuszgrabarski.todo.domain.model.ToDoList
+import blog.mateuszgrabarski.todo.domain.data.types.Id
 
 interface ToDoListRepository {
     fun create(toDoList: ToDoList): Id

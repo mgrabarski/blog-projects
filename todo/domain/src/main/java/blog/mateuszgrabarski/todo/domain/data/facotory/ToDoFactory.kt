@@ -1,8 +1,8 @@
-package blog.mateuszgrabarski.todo.domain.model.facotory
+package blog.mateuszgrabarski.todo.domain.data.facotory
 
 import blog.mateuszgrabarski.todo.domain.components.TimeProvider
-import blog.mateuszgrabarski.todo.domain.model.data.ToDo
-import blog.mateuszgrabarski.todo.domain.model.types.Id
+import blog.mateuszgrabarski.todo.domain.model.ToDo
+import blog.mateuszgrabarski.todo.domain.data.types.Id
 import java.util.Date
 
 class ToDoFactory(

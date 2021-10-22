@@ -1,4 +1,4 @@
-package blog.mateuszgrabarski.todo.domain.model.facotory
+package blog.mateuszgrabarski.todo.domain.data.facotory
 
 import blog.mateuszgrabarski.todo.domain.components.impl.SystemTimeProvider
 import org.junit.jupiter.api.Assertions.assertEquals
